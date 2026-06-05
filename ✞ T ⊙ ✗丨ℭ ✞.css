@@ -309,3 +309,11 @@ html.theme-light .background__1fed1 { background: rgb(226, 226, 226); }
 
 /* убрать водяной знак Chillax */
 [class*="wordmark"] svg, [class*="watermark"] svg { display: none !important; }
+
+/* Чат голосовых каналов */
+.chatLayerWrapper__01ae2,
+.chat_f75fb0,
+.content_f75fb0,
+.container_f369db {
+    background: transparent !important;
+}
