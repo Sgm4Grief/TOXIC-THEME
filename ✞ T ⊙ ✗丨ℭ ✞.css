@@ -35,7 +35,7 @@
 :root {
     --background-image: var(--wallpaper);
     --bg-opacity: 100%;
-    --wallpaper: url("https://raw.githubusercontent.com/Sgm4Grief/Themes_Vencord/7e3989e13a96763cd2b5118de3f9432325b250e8/OBOI1.jpg?token=GHSAT0AAAAAAD7E425BRCBAECCBBV5ETPRA2RDAYAQ");
+    --wallpaper: url("https://sgm4grief.github.io/Themes_Vencord/wallpaper.jpg");
     --modern-dark-bg: var(--wallpaper);
     --modern-light-bg: url("https://warrayquipsome.github.io/Chillax/Wallpapers/modern-light-bg.png");
     
@@ -52,7 +52,7 @@
     --window-colour: rgba(0,0,0,0.25);
     --window-blur: 5px;
     --window-border-radius: 10px;
-    --sidebar-colour: rgb(36, 36, 36);
+    --sidebar-colour: rgba(255, 255, 255, 0.06);
     
     --chillax-input-field: "Бизнес Бизнес Завтра Завтра)";
     --chillax-input-field-locked: "Ебланам вход запрещён.";
@@ -88,7 +88,7 @@
 
 .container__9293f, .container__0b563, .container_c2efea, .visual-refresh .page_c791b2, .visual-refresh .mainTableContainer__09a38, .visual-refresh .container__0b563, .visual-refresh .header__0b563, .visual-refresh .pageBody__41ed7, .visual-refresh .channelRow_e4503a { background-color: transparent !important; }
 .visual-refresh .container__551b0, .visual-refresh .scroller__23746 { background-color: transparent !important; }
-.theme-dark .gradient_e9ef78 { background: radial-gradient(130.66% 324.98% at -3.95% 0, #b41010 0, rgba(15, 28, 143, 0.8) 35.73%, rgba(8, 175, 16, 0) 100%), #000; }
+.theme-dark .gradient_e9ef78 { background: radial-gradient(130.66% 324.98% at -3.95% 0, #b41010 0, rgba(15, 28, 143, 0.8) 35.73%, rgba(8, 175, 16, 0) 100%), rgba(0,0,0,0.3); }
 .visual-refresh .shop__6db1d, .shopScroll_e77fa3, .shop__08415, .pageWrapper_e77fa3, .applicationStore_f07d62, .visual-refresh .homeWrapper__0920e, .allPerksScroller_ca1a02, .mainPageScroller_ca1a02 { background: transparent !important; }
 .headerArtV2__3ce43 { border-radius: 15px; }
 
@@ -291,30 +291,28 @@ html.theme-light .children_a6ae9b .colorRed__201d5:hover { background-color: rgb
 .sidebar__23e6b .item_aa8da2:hover:before { transition: all 0.2s; transform: rotateY(180deg); }
 .sidebar__23e6b .item_aa8da2:before { transition: all 0.2s; }
 
-html.theme-dark .accountProfileCard__1fed1 { background: rgb(26, 26, 26); }
-html.theme-light .accountProfileCard__1fed1 { background: rgb(240, 240, 240); }
-html.theme-dark .background__1fed1 { background: rgb(34, 34, 34); }
-html.theme-light .background__1fed1 { background: rgb(226, 226, 226); }
+html.theme-dark .accountProfileCard__1fed1 { background: rgba(26, 26, 26, 0.6); }
+html.theme-light .accountProfileCard__1fed1 { background: rgba(240, 240, 240, 0.6); }
+html.theme-dark .background__1fed1 { background: rgba(34, 34, 34, 0.6); }
+html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
 
 /* ========== РОЗОВАЯ ПАНЕЛЬ ГОЛОСОВОГО КАНАЛА ========== */
-.voiceUsers-1Nkg6z, .container-2VW0UT { background: rgba(0, 0, 0, 0.5) !important; backdrop-filter: blur(10px) !important; border-radius: 16px !important; margin: 8px !important; padding: 10px !important; border: 1px solid rgba(251, 84, 168, 0.3) !important; }
-.name-2K17iK { color: #fb54a8 !important; font-weight: bold !important; text-shadow: 0 0 6px rgba(251, 84, 168, 0.6) !important; }
-.button-2C5FhG { background: rgba(251, 84, 168, 0.2) !important; border-radius: 10px !important; transition: all 0.2s ease !important; }
+.voiceUsers-1Nkg6z, .container-2VW0UT {
+    background: rgba(251, 84, 168, 0.12) !important;
+    backdrop-filter: blur(12px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(251, 84, 168, 0.3) !important;
+}
+.name-2K17iK { color: #fb54a8 !important; font-weight: bold !important; }
+.button-2C5FhG { background: rgba(251, 84, 168, 0.2) !important; border-radius: 12px !important; }
 .button-2C5FhG:hover { background: rgba(251, 84, 168, 0.5) !important; }
-.avatar-2e8lTP { border-radius: 50% !important; border: 2px solid #fb54a8 !important; }
-.username-3JLfHz { color: #f0f0f0 !important; font-weight: 500 !important; }
-.voiceIcon-3k_TbJ { color: #fb54a8 !important; }
-.status-3S450G, .subtext-3EwY9a { color: #fb54a8 !important; opacity: 0.8 !important; }
-.separator-3lghs0 { background: rgba(251, 84, 168, 0.4) !important; }
+.avatar-2e8lTP { border: 2px solid #fb54a8 !important; }
+.voiceIcon-3k_TbJ, .status-3S450G { color: #fb54a8 !important; }
 
 /* убрать водяной знак Chillax */
 [class*="wordmark"] svg, [class*="watermark"] svg { display: none !important; }
 
-/* Убираем чёрный фон в Voice Chat */
+/* Убираем чёрный фон в чате */
 [class*="chat"] {
     background: transparent !important;
-}
-
-[class*="container"] {
-    background-color: transparent !important;
 }
