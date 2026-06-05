@@ -337,3 +337,24 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
 .bg__960e4 {
     background: transparent !important;
 }
+/* Полностью прозрачные настройки */
+.layer__960e4,
+.standardSidebarView__23e6b,
+.contentRegion__23e6b,
+.contentRegionScroller__23e6b,
+.sidebarRegionScroller__23e6b,
+.sidebarRegion__23e6b,
+.sidebar__23e6b {
+    background: transparent !important;
+}
+
+/* Окно настроек */
+.baseLayer__960e4 {
+    background: transparent !important;
+}
+
+/* Затемнение вокруг настроек */
+.backdrop__78332 {
+    background: rgba(0,0,0,0.2) !important;
+    backdrop-filter: blur(10px) !important;
+}
