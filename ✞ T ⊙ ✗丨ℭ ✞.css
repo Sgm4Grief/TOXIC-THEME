@@ -316,3 +316,24 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
 [class*="chat"] {
     background: transparent !important;
 }
+/* Фон окна голосового канала */
+.callContainer_cb9592,
+.chat_f75fb0,
+.container__01ae2,
+.wrapper_cb9592,
+.minimum_cb9592 {
+    background: transparent !important;
+}
+
+/* Фон области трансляций */
+.videoGrid_a21736,
+.root_af8192,
+.tile__90dc5 {
+    background: transparent !important;
+}
+
+.appMount__51fd7,
+.app__160d8,
+.bg__960e4 {
+    background: transparent !important;
+}
