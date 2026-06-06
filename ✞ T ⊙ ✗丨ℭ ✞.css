@@ -386,7 +386,7 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
     background: transparent !important;
 }
 
-/* ========== GLITCH ENTRANCE (СТАБИЛЬНЫЙ) ========== */
+/* ========== GLITCH ENTRANCE (С ЗАДЕРЖКОЙ) ========== */
 
 html::before {
     content: "✞ Король вернулся, суки ✞" !important;
@@ -415,7 +415,11 @@ html::before {
     will-change: transform, opacity, filter !important;
     backface-visibility: hidden !important;
     
-    animation: glitchIn 1.2s ease forwards, fadeOut 3.5s 1.2s ease forwards !important;
+    /* Задержка 1.5 секунды — чтобы Discord успел прогрузиться */
+    animation: glitchIn 1.2s 0.5s ease forwards, fadeOut 3.5s 1.7s ease forwards !important;
+    
+    /* Начальное состояние — скрыто */
+    opacity: 0;
 }
 
 /* ГЛИТЧ-ВХОД */
@@ -472,6 +476,6 @@ html::before {
         transform: translateX(-50%) scale(0.95);
         filter: brightness(0);
         visibility: hidden;
+        display: none;
     }
 }
-
