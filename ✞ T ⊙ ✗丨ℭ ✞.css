@@ -196,15 +196,30 @@ body::before {
     backdrop-filter: blur(8px) !important;
     z-index: 999999 !important;
     white-space: nowrap !important;
-    animation: fadeOut 4s ease-in-out forwards !important;
     pointer-events: none !important;
+    opacity: 0 !important;
+    animation: fadeOut 4s ease-in-out forwards !important;
 }
 
 @keyframes fadeOut {
-    0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
-    15% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    85% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(-20px); visibility: hidden; }
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    15% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    85% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0 !important;
+        transform: translateX(-50%) translateY(-20px);
+        display: none !important;
+        visibility: hidden !important;
+    }
 }
 
 [src="/assets/1f0bfc0865d324c2587920a7d80c609b.png"], [src="/assets/c09a43a372ba81e3018c3151d4ed4773.png"], [src="/assets/7c8f476123d28d103efe381543274c25.png"], [src="/assets/6f26ddd1bf59740c536d2274bb834a05.png"], [src="/assets/3c6ccb83716d1e4fb91d3082f6b21d77.png"] { content: url(https://i.imgur.com/tYEPmPZ.png); }
