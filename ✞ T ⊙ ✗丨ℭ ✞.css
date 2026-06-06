@@ -475,8 +475,3 @@ html::before {
     }
 }
 
-/* Страховка: если вдруг не сработало */
-body:active #app-mount::after,
-body:hover #app-mount::after {
-    animation: fadeOutAfter 0.01s forwards !important;
-}
