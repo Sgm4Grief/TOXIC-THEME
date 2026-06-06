@@ -386,70 +386,49 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
     background: transparent !important;
 }
 
-/* ========== GLITCH ENTRANCE (СТАБИЛЬНЫЙ) ========== */
+/* ========== ПРИВЕТСТВИЕ (CHILLAX-STYLE) ========== */
 
-/* Используем body — его Discord пересоздаёт реже, чем html */
-body::before {
-    content: "✞ Король вернулся, суки ✞" !important;
-    position: fixed !important;
-    top: 20px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    
-    font-size: 18px !important;
-    font-weight: bold !important;
-    color: #fb54a8 !important;
-    letter-spacing: 2px !important;
-    text-transform: uppercase !important;
-    font-family: 'Monoton', 'Poppins', monospace !important;
-
-    padding: 10px 24px !important;
-    border-radius: 40px !important;
-    background: rgba(0, 0, 0, 0.85) !important;
-    border: 1px solid #fb54a8 !important;
-    backdrop-filter: blur(10px) !important;
-    box-shadow: 0 0 15px rgba(251, 84, 168, 0.3) !important;
-    z-index: 999999 !important;
-    pointer-events: none !important;
-    white-space: nowrap !important;
-    
-    opacity: 0 !important;
-    visibility: hidden !important;
-    
-    /* Анимация запускается только один раз */
-    animation: glitchEntrance 4s ease-in-out forwards !important;
+/* Базовая переменная */
+:root {
+    --user-name: "King";
 }
 
-@keyframes glitchEntrance {
+/* Само приветствие */
+body::before {
+    content: "Greetings King" !important;
+    position: fixed !important;
+    top: 0px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-100%) !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    color: #fb54a8 !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    padding: 8px 20px !important;
+    border-radius: 30px !important;
+    border: 1px solid #fb54a8 !important;
+    backdrop-filter: blur(8px) !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    z-index: 999999 !important;
+    
+    /* Анимация как в Chillax */
+    animation: chl 3s ease forwards !important;
+    animation-delay: 2s !important;
+}
+
+/* Анимация (та же, что в Chillax) */
+@keyframes chl {
     0% {
-        opacity: 0;
-        visibility: visible;
-        transform: translateX(-50%) translateY(-20px) scale(1.2);
-        filter: blur(10px);
-        text-shadow: 3px 0 #ff0000, -3px 0 #00ffff;
-    }
-    10% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(3px);
-        filter: blur(2px);
-        text-shadow: -4px 0 #ff00ff, 4px 0 #00ff00;
+        transform: translateX(-50%) translateY(-100%);
     }
     20% {
-        transform: translateX(-50%) translateY(-2px);
-        text-shadow: 2px 0 #ff0000, -2px 0 #00ffff;
+        transform: translateX(-50%) translateY(20px);
     }
-    30% {
-        transform: translateX(-50%) translateY(1px);
-        text-shadow: -2px 0 #ff00ff, 2px 0 #00ff00;
-    }
-    40% {
-        transform: translateX(-50%) translateY(0);
-        text-shadow: none;
+    80% {
+        transform: translateX(-50%) translateY(20px);
     }
     100% {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(-50%) translateY(-10px) scale(0.95);
-        filter: blur(0);
+        transform: translateX(-50%) translateY(-100%);
     }
 }
