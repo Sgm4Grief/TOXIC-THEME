@@ -386,33 +386,36 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
     background: transparent !important;
 }
 
-/* ========== CYBERPUNK GLITCH ENTRANCE ========== */
+/* ========== GLITCH ENTRANCE (СТАБИЛЬНЫЙ) ========== */
 
-#app-mount::after {
-    content: "✞ Король вернулся, суки ✞";
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+html::before {
+    content: "✞ Король вернулся, суки ✞" !important;
+    position: fixed !important;
+    top: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     
-    font-size: 18px;
-    font-weight: bold;
-    color: #fb54a8;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-family: 'Monoton', 'Poppins', monospace;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    color: #fb54a8 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    font-family: 'Monoton', 'Poppins', monospace !important;
 
-    padding: 10px 24px;
-    border-radius: 40px;
-    background: rgba(0, 0, 0, 0.85);
-    border: 1px solid #fb54a8;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 15px rgba(251, 84, 168, 0.3);
-    z-index: 999999;
-    pointer-events: none;
-    white-space: nowrap;
+    padding: 10px 24px !important;
+    border-radius: 40px !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    border: 1px solid #fb54a8 !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 0 15px rgba(251, 84, 168, 0.3) !important;
+    z-index: 999999 !important;
+    pointer-events: none !important;
+    white-space: nowrap !important;
     
-    animation: glitchIn 1.2s ease forwards, fadeOut 3.5s 1.2s ease forwards;
+    will-change: transform, opacity, filter !important;
+    backface-visibility: hidden !important;
+    
+    animation: glitchIn 1.2s ease forwards, fadeOut 3.5s 1.2s ease forwards !important;
 }
 
 /* ГЛИТЧ-ВХОД */
@@ -454,7 +457,7 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
     }
 }
 
-/* ИСЧЕЗНОВЕНИЕ (как выключение системы) */
+/* ИСЧЕЗНОВЕНИЕ */
 @keyframes fadeOut {
     0% {
         opacity: 1;
@@ -463,20 +466,13 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
     }
     70% {
         opacity: 1;
-        transform: translateX(-50%) scale(1);
     }
     100% {
         opacity: 0;
         transform: translateX(-50%) scale(0.95);
         filter: brightness(0);
         visibility: hidden;
-        display: none;
     }
-}
-
-/* Запрещаем перезапуск анимации при движении мыши */
-#app-mount {
-    animation: none !important;
 }
 
 /* Страховка: если вдруг не сработало */
