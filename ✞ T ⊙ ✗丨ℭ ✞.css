@@ -179,7 +179,7 @@ html.theme-dark .floating-window.resizable, html.theme-dark .floating-window-con
 html.theme-light .floating-window.resizable, html.theme-light .floating-window-content, html.theme-light .editor-wrapper, html.theme-light .monaco-editor, html.theme-light .monaco-editor-background, html.theme-light .monaco-editor .inputarea.ime-input, html.theme-light .monaco-editor .margin { background: rgba(255, 255, 255, 0.1) !important; }
 .btn-primary { color: white !important; }
 
-/* ========== ПРИВЕТСТВИЕ ========== */
+/* ========== ПРИВЕТСТВИЕ (СТАБИЛЬНОЕ) ========== */
 body::before {
     content: "✞ Король вернулся, суки ✞" !important;
     position: fixed !important;
@@ -198,28 +198,19 @@ body::before {
     white-space: nowrap !important;
     pointer-events: none !important;
     opacity: 0 !important;
-    animation: fadeOut 4s ease-in-out forwards !important;
+    transition: opacity 0.5s ease-in-out !important;
 }
 
-@keyframes fadeOut {
-    0% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-20px);
-    }
-    15% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-    85% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-    100% {
-        opacity: 0 !important;
-        transform: translateX(-50%) translateY(-20px);
-        display: none !important;
-        visibility: hidden !important;
-    }
+/* Появляемся через 1 секунду */
+body::before {
+    animation: showGreeting 4s forwards !important;
+}
+
+@keyframes showGreeting {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; display: none; content: none; }
 }
 
 [src="/assets/1f0bfc0865d324c2587920a7d80c609b.png"], [src="/assets/c09a43a372ba81e3018c3151d4ed4773.png"], [src="/assets/7c8f476123d28d103efe381543274c25.png"], [src="/assets/6f26ddd1bf59740c536d2274bb834a05.png"], [src="/assets/3c6ccb83716d1e4fb91d3082f6b21d77.png"] { content: url(https://i.imgur.com/tYEPmPZ.png); }
