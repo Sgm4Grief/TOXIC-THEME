@@ -180,41 +180,31 @@ html.theme-light .floating-window.resizable, html.theme-light .floating-window-c
 .btn-primary { color: white !important; }
 
 /* ========== ПРИВЕТСТВИЕ ========== */
-body:before {
+body::before {
     content: "✞ Король вернулся, суки ✞" !important;
-    z-index: 1000000000000000000000000 !important;
+    position: fixed !important;
     top: 20px !important;
     left: 50% !important;
-    position: fixed !important;
     transform: translateX(-50%) !important;
-    border-radius: 30px !important;
-    padding: 8px 20px !important;
-    font-size: 16px !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    color: #fb54a8 !important;
+    font-size: 18px !important;
     font-weight: bold !important;
+    padding: 10px 24px !important;
+    border-radius: 40px !important;
+    border: 1px solid #fb54a8 !important;
+    backdrop-filter: blur(8px) !important;
+    z-index: 999999 !important;
     white-space: nowrap !important;
-    animation: chl 3s ease !important;
-    animation-delay: 1s !important;
+    animation: fadeOut 4s ease-in-out forwards !important;
     pointer-events: none !important;
 }
 
-html.theme-dark body:before {
-    color: #fb54a8 !important;
-    background-color: rgba(0, 0, 0, 0.8) !important;
-    border: 1px solid #fb54a8 !important;
-    backdrop-filter: blur(8px) !important;
-}
-
-html.theme-light body:before {
-    color: #000 !important;
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    border: 1px solid #fb54a8 !important;
-}
-
-@keyframes chl {
-    0% { opacity: 0; transform: translateX(-50%) translateY(-30px); }
-    20% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    80% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(-30px); visibility: hidden; }
+@keyframes fadeOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-20px); visibility: hidden; }
 }
 
 [src="/assets/1f0bfc0865d324c2587920a7d80c609b.png"], [src="/assets/c09a43a372ba81e3018c3151d4ed4773.png"], [src="/assets/7c8f476123d28d103efe381543274c25.png"], [src="/assets/6f26ddd1bf59740c536d2274bb834a05.png"], [src="/assets/3c6ccb83716d1e4fb91d3082f6b21d77.png"] { content: url(https://i.imgur.com/tYEPmPZ.png); }
