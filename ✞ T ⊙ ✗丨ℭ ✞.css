@@ -233,10 +233,35 @@ div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Offline"] > svg { filter: d
 div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Idle"] > svg { filter: drop-shadow(0 0 3px var(--rs-idle-color)) !important; }
 div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Online"] > svg { filter: drop-shadow(0 0 3px var(--rs-online-color)) !important; }
 
-/* ========== ФОН (ИСПРАВЛЕННЫЙ СЕЛЕКТОР) ========== */
-.bg_960e4 {
+/* ========== ФОН (РАБОЧАЯ ВЕРСИЯ) ========== */
+#app-mount::before {
+    content: "" !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
     background: url("https://sgm4grief.github.io/TOXIC-THEME/wallpaper.jpg") center center / cover no-repeat fixed !important;
-    opacity: 1 !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+}
+
+/* Убираем все возможные фоны, которые могут перекрывать */
+.bg_960e4,
+.bg__960e4,
+.layer_960e4,
+.layer__960e4,
+.appMount__51fd7,
+.app__160d8 {
+    background: transparent !important;
+}
+
+/* Подчищаем подложки */
+.theme-dark {
+    --background-primary: transparent !important;
+    --background-secondary: transparent !important;
+    --background-tertiary: transparent !important;
+    --background-floating: transparent !important;
 }
 
 .searchBar_e6b769, .header_f37cb1 { box-shadow: none; }
@@ -360,40 +385,8 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
     backdrop-filter: blur(10px) !important;
 }
 
-/* Убираем фон у приложения, но не трогаем .bg_960e4 */
+/* Убираем фон у приложения, но не трогаем #app-mount */
 .appMount__51fd7,
 .app__160d8 {
     background: transparent !important;
-}
-/* ========== НЕУБИВАЕМЫЙ ФОН ========== */
-
-/* 1. Страхуемся от всех возможных классов Discord */
-.bg_960e4,
-.bg__960e4,
-.layer_960e4,
-.layer__960e4,
-.appMount__51fd7,
-.app__160d8 {
-    background: transparent !important;
-}
-
-/* 2. Вешаем обои на самый верхний слой */
-#app-mount::before {
-    content: "" !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background: url("https://sgm4grief.github.io/TOXIC-THEME/wallpaper.jpg") center center / cover no-repeat fixed !important;
-    z-index: -1 !important;
-    pointer-events: none !important;
-}
-
-/* 3. Заодно убираем лишние подложки */
-.theme-dark {
-    --background-primary: transparent !important;
-    --background-secondary: transparent !important;
-    --background-tertiary: transparent !important;
-    --background-floating: transparent !important;
 }
