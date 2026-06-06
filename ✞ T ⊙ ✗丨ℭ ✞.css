@@ -368,10 +368,6 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
     background: rgba(0,0,0,0.2) !important;
     backdrop-filter: blur(10px) !important;
 }
-body,
-#app-mount {
-    background-image: url("https://sgm4grief.github.io/TOXIC-THEME/wallpaper.jpg") !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+#app-mount * {
+    background-image: none !important;
 }
