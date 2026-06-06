@@ -233,7 +233,7 @@ div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Offline"] > svg { filter: d
 div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Idle"] > svg { filter: drop-shadow(0 0 3px var(--rs-idle-color)) !important; }
 div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Online"] > svg { filter: drop-shadow(0 0 3px var(--rs-online-color)) !important; }
 
-/* ========== ФОН (ИСПРАВЛЕН) ========== */
+/* ФОН (ИСПРАВЛЕН) */
 .bg__960e4 {
     background-image: var(--wallpaper) !important;
     background-size: cover !important;
@@ -243,7 +243,7 @@ div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Online"] > svg { filter: dr
     opacity: 1 !important;
 }
 
-/* Убираем фон только у приложения, но не у .bg__960e4 */
+/* Убираем фон только у приложения, но НЕ у .bg__960e4 */
 .appMount__51fd7,
 .app__160d8 {
     background: transparent !important;
