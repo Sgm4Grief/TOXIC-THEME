@@ -233,7 +233,22 @@ div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Offline"] > svg { filter: d
 div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Idle"] > svg { filter: drop-shadow(0 0 3px var(--rs-idle-color)) !important; }
 div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Online"] > svg { filter: drop-shadow(0 0 3px var(--rs-online-color)) !important; }
 
-.bg__960e4 { background-image: var(--background-image) !important; opacity: var(--bg-opacity) !important; background-attachment: var(--background-attachment, fixed) !important; background-size: var(--background-size, cover) !important; background-position: var(--background-position, center) !important; }
+/* ========== ФОН (ИСПРАВЛЕН) ========== */
+.bg__960e4 {
+    background-image: var(--wallpaper) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    opacity: 1 !important;
+}
+
+/* Убираем фон только у приложения, но не у .bg__960e4 */
+.appMount__51fd7,
+.app__160d8 {
+    background: transparent !important;
+}
+
 .searchBar_e6b769, .header_f37cb1 { box-shadow: none; }
 .tabBody__133bf:before, .content_f75fb0:before { display: none; }
 
@@ -332,11 +347,6 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
     background: transparent !important;
 }
 
-.appMount__51fd7,
-.app__160d8,
-.bg__960e4 {
-    background: transparent !important;
-}
 /* Полностью прозрачные настройки */
 .layer__960e4,
 .standardSidebarView__23e6b,
