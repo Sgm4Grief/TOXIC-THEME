@@ -233,20 +233,10 @@ div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Offline"] > svg { filter: d
 div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Idle"] > svg { filter: drop-shadow(0 0 3px var(--rs-idle-color)) !important; }
 div[class*="_44b0c28be7879b7b-wrapper"][aria-label*="Online"] > svg { filter: drop-shadow(0 0 3px var(--rs-online-color)) !important; }
 
-/* ФОН (ИСПРАВЛЕН) */
-.bg__960e4 {
-    background-image: var(--wallpaper) !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
+/* ========== ФОН (ИСПРАВЛЕННЫЙ СЕЛЕКТОР) ========== */
+.bg_960e4 {
+    background: url("https://sgm4grief.github.io/TOXIC-THEME/wallpaper.jpg") center center / cover no-repeat fixed !important;
     opacity: 1 !important;
-}
-
-/* Убираем фон только у приложения, но НЕ у .bg__960e4 */
-.appMount__51fd7,
-.app__160d8 {
-    background: transparent !important;
 }
 
 .searchBar_e6b769, .header_f37cb1 { box-shadow: none; }
@@ -331,6 +321,7 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
 [class*="chat"] {
     background: transparent !important;
 }
+
 /* Фон окна голосового канала */
 .callContainer_cb9592,
 .chat_f75fb0,
@@ -368,6 +359,9 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
     background: rgba(0,0,0,0.2) !important;
     backdrop-filter: blur(10px) !important;
 }
-#app-mount * {
-    background-image: none !important;
+
+/* Убираем фон у приложения, но не трогаем .bg_960e4 */
+.appMount__51fd7,
+.app__160d8 {
+    background: transparent !important;
 }
