@@ -365,3 +365,35 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
 .app__160d8 {
     background: transparent !important;
 }
+/* ========== НЕУБИВАЕМЫЙ ФОН ========== */
+
+/* 1. Страхуемся от всех возможных классов Discord */
+.bg_960e4,
+.bg__960e4,
+.layer_960e4,
+.layer__960e4,
+.appMount__51fd7,
+.app__160d8 {
+    background: transparent !important;
+}
+
+/* 2. Вешаем обои на самый верхний слой */
+#app-mount::before {
+    content: "" !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: url("https://sgm4grief.github.io/TOXIC-THEME/wallpaper.jpg") center center / cover no-repeat fixed !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+}
+
+/* 3. Заодно убираем лишние подложки */
+.theme-dark {
+    --background-primary: transparent !important;
+    --background-secondary: transparent !important;
+    --background-tertiary: transparent !important;
+    --background-floating: transparent !important;
+}
