@@ -386,9 +386,10 @@ html.theme-light .background__1fed1 { background: rgba(226, 226, 226, 0.6); }
     background: transparent !important;
 }
 
-/* ========== GLITCH ENTRANCE (С ЗАДЕРЖКОЙ) ========== */
+/* ========== GLITCH ENTRANCE (СТАБИЛЬНЫЙ) ========== */
 
-html::before {
+/* Используем body — его Discord пересоздаёт реже, чем html */
+body::before {
     content: "✞ Король вернулся, суки ✞" !important;
     position: fixed !important;
     top: 20px !important;
@@ -412,70 +413,43 @@ html::before {
     pointer-events: none !important;
     white-space: nowrap !important;
     
-    will-change: transform, opacity, filter !important;
-    backface-visibility: hidden !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
     
-    /* Задержка 1.5 секунды — чтобы Discord успел прогрузиться */
-    animation: glitchIn 1.2s 0.5s ease forwards, fadeOut 3.5s 1.7s ease forwards !important;
-    
-    /* Начальное состояние — скрыто */
-    opacity: 0;
+    /* Анимация запускается только один раз */
+    animation: glitchEntrance 4s ease-in-out forwards !important;
 }
 
-/* ГЛИТЧ-ВХОД */
-@keyframes glitchIn {
+@keyframes glitchEntrance {
     0% {
         opacity: 0;
-        transform: translateX(-50%) translateY(-30px) scale(1.3);
-        filter: blur(12px);
+        visibility: visible;
+        transform: translateX(-50%) translateY(-20px) scale(1.2);
+        filter: blur(10px);
         text-shadow: 3px 0 #ff0000, -3px 0 #00ffff;
-        letter-spacing: 8px;
     }
-    15% {
+    10% {
         opacity: 1;
-        transform: translateX(-50%) translateY(5px);
+        transform: translateX(-50%) translateY(3px);
         filter: blur(2px);
         text-shadow: -4px 0 #ff00ff, 4px 0 #00ff00;
     }
-    30% {
-        transform: translateX(-50%) translateY(-3px);
+    20% {
+        transform: translateX(-50%) translateY(-2px);
         text-shadow: 2px 0 #ff0000, -2px 0 #00ffff;
     }
-    45% {
-        transform: translateX(-50%) translateY(2px);
+    30% {
+        transform: translateX(-50%) translateY(1px);
         text-shadow: -2px 0 #ff00ff, 2px 0 #00ff00;
     }
-    60% {
+    40% {
         transform: translateX(-50%) translateY(0);
-        text-shadow: 1px 0 #ff0000, -1px 0 #00ffff;
-    }
-    75% {
-        transform: translateX(-50%) translateY(1px);
         text-shadow: none;
-    }
-    100% {
-        transform: translateX(-50%) translateY(0);
-        filter: blur(0);
-        text-shadow: none;
-        letter-spacing: 2px;
-    }
-}
-
-/* ИСЧЕЗНОВЕНИЕ */
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: translateX(-50%) scale(1);
-        filter: brightness(1);
-    }
-    70% {
-        opacity: 1;
     }
     100% {
         opacity: 0;
-        transform: translateX(-50%) scale(0.95);
-        filter: brightness(0);
         visibility: hidden;
-        display: none;
+        transform: translateX(-50%) translateY(-10px) scale(0.95);
+        filter: blur(0);
     }
 }
